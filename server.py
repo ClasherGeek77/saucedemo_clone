@@ -6,7 +6,7 @@ and cart logic live inside the JS bundle — so a byte-faithful static mirror is
 complete functional clone. `mirror.py` in this directory produced `static/` from
 the live deployment; selectors, routes and behavior are identical.
 
-    python3 server.py                # http://localhost:8090
+    python3 server.py                # http://localhost:50000
     python3 server.py --port 8080
 
 Login accounts (same as saucedemo.com): standard_user, problem_user,
@@ -47,7 +47,7 @@ class SpaHandler(SimpleHTTPRequestHandler):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument('--host', default='localhost')
-    ap.add_argument('--port', type=int, default=8090)
+    ap.add_argument('--port', type=int, default=50000)
     args = ap.parse_args()
     httpd = ThreadingHTTPServer((args.host, args.port), SpaHandler)
     print('saucedemo clone on http://%s:%d  (Ctrl-C to stop)' % (args.host, args.port))
