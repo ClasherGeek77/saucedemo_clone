@@ -14,7 +14,7 @@ performance_glitch_user, error_user, visual_user (locked_out_user is rejected),
 password: secret_sauce.
 
 Notes:
-- Fonts load from fonts.googleapis.com like the real site; offline they fall back.
+- Fonts are served locally from static/, no external requests.
 - Unknown paths serve index.html (SPA router), matching the deployed app.
 """
 import argparse
